@@ -59,20 +59,26 @@
       cursor: pointer;
     }
     footer {
-      padding: 2rem;
-      background-color: #eee;
+      padding: 3rem 1rem;
+      background-color: #f9f9f9;
     }
-    .jason-container {
-      display: flex;
-      gap: 1rem;
-      align-items: flex-start;
+    .container {
+      max-width: 900px;
+      margin: auto;
     }
-    .jason-container img {
+    .container img {
       width: 100px;
       height: auto;
     }
-    .jason-text ul {
+    .container ul {
       list-style: disc;
+      padding-left: 1.2rem;
+    }
+    .jason-section {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-top: 2rem;
     }
   </style>
 </head>
@@ -93,25 +99,86 @@
   </main>
 
   <footer id="learn-more">
-    <div class="jason-container">
-      <img src="/assets/jason-smile.png" alt="Jason Smiling" />
-      <div class="jason-text">
-        <ul>
-          <li>A schema defines the structure and types of data.</li>
-          <li>Each key has a specific data type like string, number, object, or array.</li>
-          <li>The <code>required</code> list enforces the presence of certain keys.</li>
-          <li><code>$defs</code> and <code>$ref</code> help avoid repetition.</li>
-        </ul>
+    <div class="container">
+      <h2>🧰 <strong>Welcome to “Just JSON” — Learn JSON by Example</strong></h2>
+      <p><strong>🎯 Purpose:</strong><br>
+      This site helps total beginners and early developers learn how to understand, write, and validate JSON and JSON Schema — clearly and interactively.</p>
+      <hr />
+
+      <div class="jason-section">
+        <img src="jason-smile.png" alt="Jason Smiling" />
+        <div>
+          <h3>🧑‍🏫 <strong>What You'll Learn</strong></h3>
+          <h4>🌤️ <strong>What is JSON?</strong></h4>
+          <ul>
+            <li>Understand the structure of JSON (objects, arrays, strings, numbers, booleans, and null)</li>
+            <li>How it compares to JavaScript objects</li>
+            <li>Real-world examples from APIs, web forms, and app data</li>
+          </ul>
+          <h4>🛠️ <strong>What is a JSON Schema?</strong></h4>
+          <ul>
+            <li>Learn how schemas describe and validate JSON</li>
+            <li>Understand types like <code>string</code>, <code>number</code>, <code>object</code>, and how to make keys required</li>
+            <li>Learn about <code>$defs</code> and <code>$ref</code> for reusable rules</li>
+          </ul>
+          <h4>🧩 <strong>Key Concepts Made Simple</strong></h4>
+          <ul>
+            <li><code>properties</code>, <code>required</code>, <code>type</code></li>
+            <li>Nesting and arrays</li>
+            <li><code>additionalProperties: false</code> explained visually</li>
+          </ul>
+        </div>
       </div>
-    </div>
-    <div class="jason-container">
-      <img src="/assets/jason-pointing.png" alt="Jason Pointing" />
-      <div class="jason-text">
-        <ul>
-          <li>Use this tool to visualize what a valid object might look like.</li>
-          <li>Everything happens in your browser — no data is sent anywhere.</li>
-          <li>Paste a schema, hit the button, see the example!</li>
-        </ul>
+
+      <hr />
+
+      <div class="jason-section">
+        <img src="jason-pointing.png" alt="Jason Pointing" />
+        <div>
+          <h3>💻 <strong>Interactive Playground: Paste → Preview</strong></h3>
+          <blockquote>Located in the <strong>"Try It"</strong> section at the top of this site, this tool helps you visualize what a schema expects.</blockquote>
+          <h4>✨ Features:</h4>
+          <ul>
+            <li>Paste your own JSON Schema</li>
+            <li>Instantly see an example JSON object that would pass validation</li>
+            <li>Highlight mismatches or required fields if missing</li>
+            <li>Toggle sample values (realistic/fake/random)</li>
+            <li>Includes cartoon character <strong>Jason the Coder</strong> for tips and explanations!</li>
+          </ul>
+        </div>
+      </div>
+
+      <hr />
+
+      <div class="jason-section">
+        <img src="jason-coding.png" alt="Jason Coding" />
+        <div>
+          <h3>📚 <strong>Sections of the Site</strong></h3>
+          <ul>
+            <li><strong>Learn:</strong> Small guided lessons with examples and quizzes</li>
+            <li><strong>Cheat Sheets:</strong> JSON templates, validation checklists, emojis for types</li>
+            <li><strong>Toolbox:</strong> Schema-to-sample generator, formatter, and online validator</li>
+            <li><strong>Jason Says:</strong> Tips, common mistakes, and “aha!” examples from your cartoon guide</li>
+            <li><strong>Quick Copy Zone:</strong> Grab sample schemas, templates, or helper functions</li>
+          </ul>
+        </div>
+      </div>
+
+      <hr />
+
+      <div class="jason-section">
+        <img src="jason-frowning.png" alt="Jason Frowning" />
+        <div>
+          <h3>😕 <strong>Still Confused?</strong></h3>
+          <p>Don’t worry — learning JSON takes a bit of practice!</p>
+          <ul>
+            <li><a href="https://docs.google.com/document/d/1wMg4ilyqACU9HcYPF4dODN2kob2iCnKXWAH8WkwmKsM/edit?tab=t.0/" target="_blank">JSON Cheat Sheet</a></li>
+            <li><a href="https://jsonlint.com/" target="_blank">JSONLint Validator</a></li>
+            <li><a href="https://www.jsonschemavalidator.net/" target="_blank">JSON Schema Validator</a></li>
+            <li><a href="https://www.learnjson.com/" target="_blank">LearnJSON.com</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON" target="_blank">MDN JSON Reference</a></li>
+          </ul>
+        </div>
       </div>
     </div>
   </footer>
