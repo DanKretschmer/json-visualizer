@@ -6,7 +6,7 @@
   <title>JSON Schema Example Generator</title>
 
   <!-- ✅ Load JSON Schema Faker -->
- <script src="https://cdn.jsdelivr.net/npm/json-schema-faker@0.5.4/dist/bundle.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/json-schema-faker@0.5.4/dist/bundle.js" defer></script>
 
 //  <script>
 //    const jsf = window.jsf; // ✅ Ensure global access
@@ -204,16 +204,17 @@
 <script>
   function generateJSON() {
     const schemaText = document.getElementById('schema-input').value;
-    const outputDiv = document.getElementById('output');
+    let outputDiv = document.getElementById('output');
     try {
       const schema = JSON.parse(schemaText);
-      const example = jsf.generate(schema); // ✅ Should now work
+      const example = jsf.generate(schema);  // ✅ Works if jsf is loaded
       outputDiv.textContent = JSON.stringify(example, null, 2);
     } catch (e) {
       outputDiv.textContent = '⚠️ Error parsing schema: ' + e.message;
     }
   }
 </script>
+
 
 
 </body>
