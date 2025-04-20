@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JSON Schema Example Generator</title>
+  <script src="https://cdn.jsdelivr.net/npm/json-schema-faker@0.5.0-rc23/dist/json-schema-faker.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #333;
+      color: white;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    main {
+      display: flex;
+      flex-direction: row;
+      height: 80vh;
+      padding: 2rem;
+      gap: 2rem;
+    }
+    textarea {
+      width: 100%;
+      height: 100%;
+      padding: 1rem;
+      font-family: monospace;
+      font-size: 1rem;
+    }
+    #output {
+      background-color: #f4f4f4;
+      padding: 1rem;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      white-space: pre-wrap;
+      font-family: monospace;
+    }
+    .column {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    button {
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    footer {
+      padding: 2rem;
+      background-color: #eee;
+    }
+    .jason-container {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+    .jason-container img {
+      width: 100px;
+      height: auto;
+    }
+    .jason-text ul {
+      list-style: disc;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🧠 Learn JSON Schemas</h1>
+    <a href="#learn-more">Learn More</a>
+  </header>
+
+  <main>
+    <div class="column">
+      <textarea id="schema-input" placeholder="Paste JSON schema here..."></textarea>
+      <button onclick="generateJSON()">Show JSON</button>
+    </div>
+    <div class="column">
+      <div id="output">Your generated JSON will appear here</div>
+    </div>
+  </main>
+
+  <footer id="learn-more">
+    <div class="jason-container">
+      <img src="/assets/jason-smile.png" alt="Jason Smiling" />
+      <div class="jason-text">
+        <ul>
+          <li>A schema defines the structure and types of data.</li>
+          <li>Each key has a specific data type like string, number, object, or array.</li>
+          <li>The <code>required</code> list enforces the presence of certain keys.</li>
+          <li><code>$defs</code> and <code>$ref</code> help avoid repetition.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="jason-container">
+      <img src="/assets/jason-pointing.png" alt="Jason Pointing" />
+      <div class="jason-text">
+        <ul>
+          <li>Use this tool to visualize what a valid object might look like.</li>
+          <li>Everything happens in your browser — no data is sent anywhere.</li>
+          <li>Paste a schema, hit the button, see the example!</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function generateJSON() {
+      const schemaText = document.getElementById('schema-input').value;
+      let outputDiv = document.getElementById('output');
+      try {
+        const schema = JSON.parse(schemaText);
+        const example = window.jsf.generate(schema);
+        outputDiv.textContent = JSON.stringify(example, null, 2);
+      } catch (e) {
+        outputDiv.textContent = '⚠️ Error parsing schema: ' + e.message;
+      }
+    }
+  </script>
+</body>
+</html>
