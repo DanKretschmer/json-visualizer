@@ -91,6 +91,15 @@
   </header>
 
   <main>
+    
+    <div class="column">
+      <textarea id="schema-input" placeholder="Paste JSON schema here..."></textarea>
+      <button onclick="generateJSON()">Show JSON</button>
+    </div>
+    <div class="column">
+      <div id="output">Your generated JSON will appear here</div>
+    </div>
+  </main>
 
      <div class="jason-section">
         <img src="jason-smiling.png" alt="Jason Coding" />
@@ -104,15 +113,6 @@
           </ul>
         </div>
       </div>
-    
-    <div class="column">
-      <textarea id="schema-input" placeholder="Paste JSON schema here..."></textarea>
-      <button onclick="generateJSON()">Show JSON</button>
-    </div>
-    <div class="column">
-      <div id="output">Your generated JSON will appear here</div>
-    </div>
-  </main>
 
   <footer id="learn-more">
     <div class="container">
