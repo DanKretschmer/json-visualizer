@@ -4,7 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>JSON Schema Example Generator</title>
-  <script src="https://cdn.jsdelivr.net/npm/json-schema-faker@0.5.0-rc23/dist/json-schema-faker.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@json-schema-faker/json-schema-faker/dist/json-schema-faker.min.js"></script>
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -102,31 +103,45 @@
     <div class="container">
       <h2>🧰 <strong>Welcome to “Just JSON” — Learn JSON by Example</strong></h2>
       <p><strong>🎯 Purpose:</strong><br>
-      This site helps total beginners and early developers learn how to understand, write, and validate JSON and JSON Schema — clearly and interactively.</p>
+      This site helps total beginners and early developers learn how to understand JSON and JSON Schema.</p>
       <hr />
 
       <div class="jason-section">
-        <img src="jason-smile.png" alt="Jason Smiling" />
+        <img src="jason-smiling.png" alt="Jason Smiling" />
         <div>
-          <h3>🧑‍🏫 <strong>What You'll Learn</strong></h3>
-          <h4>🌤️ <strong>What is JSON?</strong></h4>
-          <ul>
-            <li>Understand the structure of JSON (objects, arrays, strings, numbers, booleans, and null)</li>
-            <li>How it compares to JavaScript objects</li>
-            <li>Real-world examples from APIs, web forms, and app data</li>
-          </ul>
+          <h3>🧑‍🏫 <strong>What is JSON?</strong></h3>
+<ul>
+  <li>🧱 JSON is a way to structure data using key-value pairs.</li>
+  <li>📦 Data is organized into objects (<code>{}</code>) and arrays (<code>[]</code>).</li>
+  <li>🧵 Keys are always strings; values can be strings, numbers, booleans, arrays, objects, or <code>null</code>.</li>
+  <li>🔄 It looks a lot like JavaScript object syntax.</li>
+  <li>🌐 It's used everywhere—from web APIs to config files.</li>
+  <li>📄 JSON is plain text and easy for both humans and machines to read.</li>
+  <li>⚙️ It's the standard for sending data between a browser and a server.</li>
+</ul>
           <h4>🛠️ <strong>What is a JSON Schema?</strong></h4>
           <ul>
-            <li>Learn how schemas describe and validate JSON</li>
-            <li>Understand types like <code>string</code>, <code>number</code>, <code>object</code>, and how to make keys required</li>
-            <li>Learn about <code>$defs</code> and <code>$ref</code> for reusable rules</li>
-          </ul>
+  <li>📘 A JSON Schema is a set of rules for what a JSON object should look like.</li>
+  <li>📐 It defines data types like <code>string</code>, <code>number</code>, <code>object</code>, <code>array</code>, and more.</li>
+  <li>🔑 You can mark keys as <code>required</code> so they must be present in the data.</li>
+  <li>🔁 <code>$defs</code> and <code>$ref</code> let you reuse parts of the schema to avoid repetition.</li>
+  <li>🧪 Schemas help validate data before it's sent to or used by an app or API.</li>
+  <li>📝 A template is like a filled-out version of a schema—an example of valid JSON based on the rules.</li>
+  <li>🛠️ Use schemas to catch missing or wrong data early, especially in APIs and forms.</li>
+</ul>
+
+         
+          
           <h4>🧩 <strong>Key Concepts Made Simple</strong></h4>
-          <ul>
-            <li><code>properties</code>, <code>required</code>, <code>type</code></li>
-            <li>Nesting and arrays</li>
-            <li><code>additionalProperties: false</code> explained visually</li>
-          </ul>
+         <ul>
+  <li>🔑 <code>properties</code> define the keys inside your object — like the labels on a form.</li>
+  <li>✔️ <code>required</code> means “don’t forget this key!” — it's not optional.</li>
+  <li>🔠 <code>type</code> tells what kind of data you expect — like <code>string</code>, <code>number</code>, or <code>object</code>.</li>
+  <li>🧱 Nesting means you can put objects inside other objects — like folders inside folders.</li>
+  <li>📦 Arrays hold lists of values — use them when you need more than one of something.</li>
+  <li>🚫 <code>additionalProperties: false</code> means “only the keys I listed are allowed” — no extras!</li>
+</ul>
+
         </div>
       </div>
 
@@ -136,14 +151,12 @@
         <img src="jason-pointing.png" alt="Jason Pointing" />
         <div>
           <h3>💻 <strong>Interactive Playground: Paste → Preview</strong></h3>
-          <blockquote>Located in the <strong>"Try It"</strong> section at the top of this site, this tool helps you visualize what a schema expects.</blockquote>
+          <blockquote>Located at the top of this site, this tool helps you visualize what a schema expects.</blockquote>
           <h4>✨ Features:</h4>
           <ul>
-            <li>Paste your own JSON Schema</li>
+            <li>Paste your own JSON Schema on the left</li>
             <li>Instantly see an example JSON object that would pass validation</li>
-            <li>Highlight mismatches or required fields if missing</li>
-            <li>Toggle sample values (realistic/fake/random)</li>
-            <li>Includes cartoon character <strong>Jason the Coder</strong> for tips and explanations!</li>
+            <li>Just press the Show JSON button to see an example appear on the right</li>
           </ul>
         </div>
       </div>
@@ -155,11 +168,10 @@
         <div>
           <h3>📚 <strong>Sections of the Site</strong></h3>
           <ul>
-            <li><strong>Learn:</strong> Small guided lessons with examples and quizzes</li>
-            <li><strong>Cheat Sheets:</strong> JSON templates, validation checklists, emojis for types</li>
-            <li><strong>Toolbox:</strong> Schema-to-sample generator, formatter, and online validator</li>
-            <li><strong>Jason Says:</strong> Tips, common mistakes, and “aha!” examples from your cartoon guide</li>
-            <li><strong>Quick Copy Zone:</strong> Grab sample schemas, templates, or helper functions</li>
+            <li><strong>Learn:</strong> The basics of JSON</li>
+            <li><strong>More info:</strong>Links to JSON cheat sheets, validatiors, and more resources</li>
+            <li><strong>Toolbox:</strong> Schema-to-sample generator</li>
+            <li><strong>Jason Says:</strong> Complex concepts made simple</li>
           </ul>
         </div>
       </div>
@@ -183,18 +195,22 @@
     </div>
   </footer>
 
-  <script>
-    function generateJSON() {
-      const schemaText = document.getElementById('schema-input').value;
-      let outputDiv = document.getElementById('output');
-      try {
-        const schema = JSON.parse(schemaText);
-        const example = window.jsf.generate(schema);
+ <script>
+  function generateJSON() {
+    const schemaText = document.getElementById('schema-input').value;
+    let outputDiv = document.getElementById('output');
+    try {
+      const schema = JSON.parse(schemaText);
+      jsf.resolve(schema).then(example => {
         outputDiv.textContent = JSON.stringify(example, null, 2);
-      } catch (e) {
-        outputDiv.textContent = '⚠️ Error parsing schema: ' + e.message;
-      }
+      }).catch(err => {
+        outputDiv.textContent = '⚠️ Schema error: ' + err.message;
+      });
+    } catch (e) {
+      outputDiv.textContent = '⚠️ Error parsing schema: ' + e.message;
     }
-  </script>
+  }
+</script>
+
 </body>
 </html>
