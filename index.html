@@ -5,11 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>JSON Schema Example Generator</title>
 
-  <!-- ✅ Load JSON Schema Faker -->
-<script src="https://cdn.jsdelivr.net/npm/json-schema-faker@0.5.4/dist/bundle.js" defer></script>
+
+//<script src="https://cdn.jsdelivr.net/npm/json-schema-faker@0.5.4/dist/bundle.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/json-schema-faker@0.5.0-rc23/dist/json-schema-faker.min.js"></script>
 
 //  <script>
-//    const jsf = window.jsf; // ✅ Ensure global access
+//    const jsf = window.jsf; 
 //  </script>
 
 
@@ -106,7 +107,7 @@
     </div>
   </main>
 
-  <!-- ✅ First Jason Section Fixed -->
+
   <div class="container">
     <div class="jason-section">
       <img src="jason-smiling.png" alt="Jason Smiling" />
@@ -207,7 +208,7 @@
     let outputDiv = document.getElementById('output');
     try {
       const schema = JSON.parse(schemaText);
-      const example = jsf.generate(schema);  // ✅ Works if jsf is loaded
+      const example = jsf.generate(schema);  
       outputDiv.textContent = JSON.stringify(example, null, 2);
     } catch (e) {
       outputDiv.textContent = '⚠️ Error parsing schema: ' + e.message;
