@@ -191,7 +191,7 @@
             <li><a href="https://docs.google.com/document/d/1wMg4ilyqACU9HcYPF4dODN2kob2iCnKXWAH8WkwmKsM/edit?tab=t.0/" target="_blank">JSON Cheat Sheet</a></li>
             <li><a href="https://jsonlint.com/" target="_blank">JSONLint Validator</a></li>
             <li><a href="https://www.jsonschemavalidator.net/" target="_blank">JSON Schema Validator</a></li>
-            <li><a href="https://www.learnjson.com/" target="_blank">LearnJSON.com</a></li>
+            <li><a href="https://www.w3schools.com/js/js_json_intro.asp" target="_blank">JSON Intro at w3 Schools</a></li>
             <li><a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON" target="_blank">MDN JSON Reference</a></li>
           </ul>
         </div>
@@ -199,21 +199,19 @@
     </div>
   </footer>
 
-  <script>
-    function generateJSON() {
-      const schemaText = document.getElementById('schema-input').value;
-      let outputDiv = document.getElementById('output');
-      try {
-        const schema = JSON.parse(schemaText);
-        jsf.resolve(schema).then(example => {
-          outputDiv.textContent = JSON.stringify(example, null, 2);
-        }).catch(err => {
-          outputDiv.textContent = '⚠️ Schema error: ' + err.message;
-        });
-      } catch (e) {
-        outputDiv.textContent = '⚠️ Error parsing schema: ' + e.message;
-      }
+ <script>
+  function generateJSON() {
+    const schemaText = document.getElementById('schema-input').value;
+    let outputDiv = document.getElementById('output');
+    try {
+      const schema = JSON.parse(schemaText);
+      const example = jsf.generate(schema);  // ✅ Synchronous method
+      outputDiv.textContent = JSON.stringify(example, null, 2);
+    } catch (e) {
+      outputDiv.textContent = '⚠️ Error parsing schema: ' + e.message;
     }
-  </script>
+  }
+</script>
+
 </body>
 </html>
